@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styles from './Buscador.module.scss';
 import { CgSearch } from 'react-icons/cg';
 
@@ -18,5 +18,5 @@ export default function Buscador({ busca, setBusca }: Props) {
       size={20}
       color="#4C4D5E"
     />
-  </div>
+  </div>;
 }
