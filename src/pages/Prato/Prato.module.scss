@@ -23,7 +23,6 @@
 
 .imagem {
   width: 600px;
-
   img {
     border-radius: 8px;
     width: 100%;
@@ -34,13 +33,11 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-
   &__descricao {
     color: $darkest-grey;
     font-size: 1.5rem;
     font-weight: bold;
   }
-
   &____detalhes {
     display: flex;
     justify-content: space-between;

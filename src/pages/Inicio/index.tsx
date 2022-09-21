@@ -6,15 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import { Prato } from 'types/Prato';
 
 export default function Inicio() {
-
   let pratosRecomendados = [...cardapio];
   pratosRecomendados = pratosRecomendados.sort(() => 0.5 - Math.random()).splice(0, 3);
-
   const navigate = useNavigate();
-  function redirecionarParaDetalhes(prato: Prato) {
-    navigate(`/prato/${prato.id}`, { state: { prato } });
-  }
 
+  function redirecionarParaDetalhes(prato: Prato) {
+    navigate(`/prato/${prato.id}`, { state: { prato }, replace: true });
+  }
   return (
     <section>
       <h3 className={stylesTema.titulo}>
@@ -22,27 +20,26 @@ export default function Inicio() {
       </h3>
       <div className={styles.recomendados}>
         {pratosRecomendados.map(item => (
-          <div key={item.id}
-            className={styles.recomendado}>
+          <div key={item.id} className={styles.recomendado}>
             <div className={styles.recomendado__imagem}>
               <img src={item.photo} alt={item.title} />
             </div>
             <button
               className={styles.recomendado__botao}
-              onClick={() => redirecionarParaDetalhes(item)}>
+              onClick={() => redirecionarParaDetalhes(item)}
+            >
               Ver mais
             </button>
           </div>
         ))}
       </div>
-      <h3 className={stylesTema.titulo}>Nossa casa</h3>
+      <h3 className={stylesTema.titulo}> Nossa casa </h3>
       <div className={styles.nossaCasa}>
-        <img src={nossaCasa} alt='Casa do aluroni' />
+        <img src={nossaCasa} alt="Casa do aluroni" />
         <div className={styles.nossaCasa__endereco}>
-          Rua Mandasaia, 3 <br /><br /> Rio de Janeiro - RJ
+          Rua Mandasaia, 3 <br /> <br /> Rio de Janeiro - RJ
         </div>
       </div>
     </section>
-
   );
 }

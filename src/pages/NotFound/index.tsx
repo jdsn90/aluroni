@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 export default function NotFound() {
   const navigate = useNavigate();
-
   return (
     <div className={classNames({
       [styles.container]: true,
@@ -18,6 +17,6 @@ export default function NotFound() {
         </button>
       </div>
       <NotFoundImage />
-    </div >
+    </div>
   );
 }
